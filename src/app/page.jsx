@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex items-center gap-10">
       <div className="flex-1 flex flex-col gap-5">
-        <h1 className="text-6xl h-40 bg-gradient-to-b from-green-900 to-blue-300 bg-clip-text text-transparent">
+        <h1 className="text-6xl h-40 bg-gradient-to-b from-orange-900 to-blue-300 bg-clip-text text-transparent">
           Better design for your digital products.
         </h1>
         <p className="text-xl font-light ">
