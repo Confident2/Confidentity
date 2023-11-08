@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 
-// import { signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 import { ThemeContext } from "../context/themecontext";
 import DarkModeToggle from "./darkmodetoggle";
@@ -42,44 +42,29 @@ const links = [
 ];
 
 const Navbar = () => {
-  //   const session = useSession();
-  const { mode } = useContext(ThemeContext);
+  const session = useSession();
+
   return (
-    <div
-      className={`bg-${
-        mode === "light" ? "white" : "black"
-      } h-20 flex items-center justify-between px-4 `}
-    >
-      <Link
-        href="/"
-        className={`text-2xl font-bold ${
-          mode === "light" ? "text-black" : "text-white"
-        }`}
-      >
+    <div className="h-20 flex items-center justify-between px-4 ">
+      <Link href="/" className="text-2xl font-bold">
         Confidentity
       </Link>
 
       <div className="flex items-center space-x-4 ">
         <DarkModeToggle />
         {links.map((link) => (
-          <Link
-            key={link.id}
-            href={link.url}
-            className={`text-gray-600 hover:text-green-500 ${
-              mode === "black" ? "text-white" : ""
-            }`}
-          >
+          <Link key={link.id} href={link.url}>
             {link.title}
           </Link>
         ))}
-        {/* {session.status === "authenticated" && (
-          <button
-            className="px-4 py-2 bg-green-500 text-white rounded cursor-pointer"
-            onClick={signOut}
-          >
-            Logout
-          </button>
-        )} */}
+        {/* {session.status === "authenticated" && ( */}
+        <button
+          className="px-4 py-2 bg-orange-500 text-white rounded-full cursor-pointer"
+          onClick={signOut}
+        >
+          Logout
+        </button>
+        {/* )} */}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ export const content = [
 ];
 export const theme = {
   extend: {
+    darkMode: "class",
     backgroundImage: {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       "gradient-conic":

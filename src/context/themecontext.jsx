@@ -14,8 +14,10 @@ export const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ toggle, mode }}>
       <div
-        className={`theme transition-all duration-300 ease-in-out ${
-          mode === "dark" ? "bg-black text-white" : "bg-white text-black"
+        className={`dark transition-all duration-300 ease-in-out ${
+          mode === "dark"
+            ? "dark:bg-slate-900 text-white"
+            : "bg-white text-black"
         }`}
       >
         {children}
