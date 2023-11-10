@@ -1,0 +1,12 @@
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.animate-move {
+  animation: move 2s infinite ease alternate;
+}

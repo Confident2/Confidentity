@@ -45,7 +45,7 @@ const Navbar = () => {
   const session = useSession();
 
   return (
-    <div className="h-20 flex items-center justify-between px-4 ">
+    <div className="h-20 flex items-center justify-between mx-24 max-w-full ">
       <Link href="/" className="text-2xl font-bold">
         Confidentity
       </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
         ))}
         {/* {session.status === "authenticated" && ( */}
         <button
-          className="px-4 py-2 bg-orange-500 text-white rounded-full cursor-pointer"
+          className="px-4 py-2 bg-orangeButton text-white rounded-full cursor-pointer"
           onClick={signOut}
         >
           Logout

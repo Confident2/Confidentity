@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className + "dark:bg-slate-700 dark:text-white"}>
         <ThemeProvider>
           <AuthProvider>
-            <div className="max-w-screen-xl min-h-screen mx-auto p-8 flex flex-col justify-between">
+            <div className="min-h-screen flex flex-col justify-between">
               <Navbar />
               {children}
               <Footer />
