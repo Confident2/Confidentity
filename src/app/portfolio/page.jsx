@@ -1,22 +1,42 @@
 import React from "react";
-import styles from "./page.module.css";
 import Link from "next/link";
+import Image from "next/image";
+import "./page.css";
+const works = [
+  {
+    title: "Illustrations",
+    img: "/illustration.png",
+  },
+  {
+    title: "Websites",
+    img: "/websites.jpg",
+  },
+  {
+    title: "Application",
+    img: "/apps.jpg",
+  },
+];
 
 const Portfolio = () => {
   return (
-    <div>
-      <h1 className="my-5 text-2xl">Choose a gallery</h1>
-      <div className="flex gap-12">
-        <Link href="/portfolio/illustrations" className={styles.item}>
-          <span className={styles.title}>Illustrations</span>
-        </Link>
-        <Link href="/portfolio/websites" className={styles.item}>
-          <span className={styles.title}>Websites</span>
-        </Link>
-        <Link href="/portfolio/application" className={styles.item}>
-          <span className={styles.title}>Application</span>
-        </Link>
-      </div>
+    <div className="flex gap-12 ">
+      {works.map((work, index) => (
+        <div key={index} className="relative">
+          <Link href={`/portfolio/${work.title.toLowerCase()}`} legacyBehavior>
+            <div className="flex border-4 border-solid border-gray-300 bg-cover h-96 w-80 rounded-md relative ">
+              <Image
+                src={work.img}
+                alt={work.title}
+                layout="fill"
+                objectFit="cover"
+              />
+              <span className="absolute right-4 bottom-4 text-2xl font-bold text-white">
+                {work.title}
+              </span>
+            </div>
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };
