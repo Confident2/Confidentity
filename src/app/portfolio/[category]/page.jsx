@@ -18,18 +18,26 @@ const getData = (cat) => {
 const Category = ({ params }) => {
   const data = getData(params.category);
   return (
-    <div className={styles.container}>
-      <h1 className={styles.catTitle}>{params.category}</h1>
+    <div>
+      <h1 className="text-orangeButton">{params.category}</h1>
 
       {data.map((item) => (
-        <div className={styles.item} key={item.id}>
-          <div className={styles.content}>
-            <h1 className={styles.title}>{item.title}</h1>
-            <p className={styles.desc}>{item.desc}</p>
+        <div
+          className="flex gap-10 mt-16 mb-20 even:flex-row-reverse  "
+          key={item.id}
+        >
+          <div className="flex-1 flex flex-col gap-2 justify-center pl-10  ">
+            <h1 className="text-5xl">{item.title}</h1>
+            <p className="text-xl">{item.desc}</p>
             <Button text="See More" url="#" />
           </div>
-          <div className={styles.imgContainer}>
-            <Image className={styles.img} fill={true} src={item.image} alt="" />
+          <div className="flex-1 h-96 relative mt-14  ">
+            <Image
+              src={item.image}
+              alt="contact-image"
+              className="object-contain w-full"
+              fill={true}
+            />
           </div>
         </div>
       ))}
