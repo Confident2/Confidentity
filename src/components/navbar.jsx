@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import React, { useContext } from "react";
-
+import React from "react";
 import { signOut, useSession } from "next-auth/react";
-
-import { ThemeContext } from "../context/themecontext";
 import DarkModeToggle from "./darkmodetoggle";
 
 const links = [
@@ -57,14 +54,14 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {/* {session.status === "authenticated" && ( */}
-        <button
-          className="px-4 py-2 bg-orangeButton text-white rounded-full cursor-pointer"
-          onClick={signOut}
-        >
-          Logout
-        </button>
-        {/* )} */}
+        {session.status === "authenticated" && (
+          <button
+            className="px-4 py-2 bg-orangeButton text-white rounded-full cursor-pointer"
+            onClick={signOut}
+          >
+            Logout
+          </button>
+        )}
       </div>
     </div>
   );

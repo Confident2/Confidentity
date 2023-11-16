@@ -90,7 +90,7 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className={styles.container}>
+      <div className="flex gap-[100px] mx-24 max-w-full mt-20 ">
         <div className={styles.posts}>
           {isLoading
             ? "loading"

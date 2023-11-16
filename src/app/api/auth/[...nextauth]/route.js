@@ -11,6 +11,7 @@ const handler = NextAuth({
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
+
       async authorize(credentials) {
         //Check if the user exists.
         await connect();
@@ -51,7 +52,6 @@ const handler = NextAuth({
   pages: {
     error: "/dashboard/login",
   },
-
 });
 
 export { handler as GET, handler as POST };

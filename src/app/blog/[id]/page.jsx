@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
   return (
-    <div className={styles.container}>
+    <div className="mx-24 max-w-full mt-20">
       <div className={styles.top}>
         <div className={styles.info}>
           <h1 className={styles.title}>{data.title}</h1>
@@ -43,7 +43,7 @@ const BlogPost = async ({ params }) => {
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={data.image} alt="" fill={true} className={styles.image} />
+          <Image src={data.img} alt="" fill={true} className={styles.image} />
         </div>
       </div>
       <div className={styles.content}>
